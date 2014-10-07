@@ -31,6 +31,12 @@ public class Magpie2
 	public String getResponse(String statement)
 	{
 		String response = "";
+
+        statement = statement.trim().toLowerCase();
+
+        if(statement.indexOf("") >= 0)
+            response = "Say something please" ;
+
 		if (statement.indexOf("no") >= 0)
 		{
 			response = "Why so negative?";
@@ -43,12 +49,15 @@ public class Magpie2
 			response = "Tell me more about your family.";
 		}
 
+        //
+        // To prioritize keywords, put whichever keyword you want to respond to first.
+
         if(statement.indexOf("cat") >= 0 || statement.indexOf("dog") >= 0)
         {
             response = "Tell me more about your pets";
         }
 
-        if(statement.indexOf("Tanzcos") >= 0)
+        if(statement.indexOf("tanczos") >= 0)
         {
             response = "He sounds like a good teacher";
         }
